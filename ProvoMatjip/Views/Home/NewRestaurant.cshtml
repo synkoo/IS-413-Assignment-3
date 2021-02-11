@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Great food near Provo";
+}
+
+@model ProvoMatjip.Models.Recommendation
+
+<h1>@ViewBag.Title</h1>
+
+<br />
+<form asp-action="NewRestaurant" method="POST">
+    <div>
+        <label asp-for="Submitter">Your Name:</label>
+        <input asp-for="Submitter" />
+        @*Display validation error when not entered correctly*@
+        <span asp-validation-for="Submitter" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="RestaurantName">Restaurant Name:</label>
+        <input asp-for="RestaurantName" />
+        <span asp-validation-for="RestaurantName" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="FavoriteDish">Favorite Dish:</label>
+        <input asp-for="FavoriteDish" />
+        <span asp-validation-for="FavoriteDish" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Phone">Restaurant Phone Number:</label>
+        <input asp-for="Phone" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <button type="submit">Submit</button>
+</form>

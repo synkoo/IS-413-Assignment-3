@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Foods to Try Near Provo";
+}
+
+@model IEnumerable<string>
+
+<div class="text-center">
+    <img src="~/img/canyon.jpg" width="800" class="rounded" />
+    <br />
+    <br />
+    <p>The word MatJip 맛집 is a short form of the term for "delicious place" in Korean.
+        Here are my personal favorite top 5 restaurants near Provo!</p>
+    <br />
+    <div class="list-group">
+        <ul>
+            @foreach (string i in Model)
+            {
+                <li class="list-group-item">@i</li>
+            }
+        </ul>
+    </div>
+    <br />
+    <a class="btn btn-primary" asp-action="NewRestaurant">Suggest a New Restaurant</a>
+</div>
+
